@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <h1>Gallery</h1>
+  </div>
+  {% if thumbnail_names %}
+  <div class="row">
+    {% for thumbnail_name in thumbnail_names %}
+    <div class="col-xs-6 col-md-3 img-div">
+      <img src="{{url_for('thumbnails', filename=thumbnail_name)}}" class="img-responsive thumb" data-toggle="modal"
+           data-target="#image{{ loop.index0 }}"/>
+      <div class="modal fade" id="image{{ loop.index0 }}" tabindex="-1" role="dialog"
+           aria-labelledby="image{{ loop.index0 }}ModalLabel">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <img src="{{url_for('images', filename=thumbnail_name)}}" class="img-responsive"/>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+</div>
+{% endblock %}
+
+{% block styles %}
+{{super()}}
+<link rel="stylesheet" href="{{url_for('static_files', filename='gallery.css')}}">
+{% endblock %}

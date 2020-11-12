@@ -1,0 +1,11 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %}Flask Gallery{% endblock %}
+
+{% block navbar %}
+<nav class="navbar navbar-inverse">
+  <div class="container">
+    <a class="navbar-brand" href="{{ url_for('index') }}">Home</a>
+  </div>
+</nav>
+{% endblock %}

@@ -3,5 +3,3 @@ Flask==1.1.2
 Flask-Bootstrap==3.3.7.1
 Pillow==8.0.1
 python-dotenv==0.15.0
-requests==2.24.0
-six==1.15.0

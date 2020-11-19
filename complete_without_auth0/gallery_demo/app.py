@@ -51,7 +51,7 @@ def upload():
             filename = secure_filename(filename)
             # This is to verify files are supported
             ext = os.path.splitext(filename)[1][1:].strip().lower()
-            if ext in set(['jpg', 'jpeg', 'png']):
+            if ext in {'jpg', 'jpeg', 'png'}:
                 print('File supported moving on...')
             else:
                 return render_template('error.html', message='Uploaded files are not supported...')

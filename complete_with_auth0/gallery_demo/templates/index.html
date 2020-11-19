@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="container">
+    <div class="row">
+      <h1>Hi There!!!</h1>
+      <p>Welcome to The Gallery</p>
+      {% if logged_in %}
+        <p>You can <a href="{{ url_for('upload') }}">upload images</a> or head over to the <a
+            href="{{ url_for('gallery') }}">gallery</a></p>
+        <p><a href="{{ url_for('logout') }}">Logout</a></p>
+      {% else %}
+        <p><a href="{{ url_for('login') }}" class="login">Login</a> to upload images or head over to the <a
+            href="{{ url_for('gallery') }}">gallery</a></p>
+      {% endif %}
+    </div>
+  </div>
+{% endblock %}

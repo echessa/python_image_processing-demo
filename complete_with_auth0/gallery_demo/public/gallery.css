@@ -1,0 +1,15 @@
+.thumb:hover {
+  cursor: pointer;
+}
+
+.img-div {
+  margin-bottom: 15px;
+}
+
+/* Media queries to handle various device widths */
+
+@media only screen and (max-width: 320px) {
+  .img-div {
+    width: 100%;
+  }
+}

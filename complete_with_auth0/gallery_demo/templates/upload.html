@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <h2>Welcome {{user['name']}}</h2>
+    <form action="{{ url_for('upload') }}" method="POST" enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="images">File input</label>
+        <input type="file" id="images" name="images" accept="image/*" multiple>
+        <p class="help-block">Select Images to Upload.</p>
+        <input type="submit" value="Upload" class="btn btn-success">
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}
